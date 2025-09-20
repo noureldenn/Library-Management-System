@@ -61,7 +61,6 @@ public class UserService {
         if (enabled != null) {
             user.setEnabled(enabled);
         }
-
         return userRepo.save(user);
     }
 

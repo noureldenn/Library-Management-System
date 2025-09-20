@@ -22,7 +22,7 @@ public class User {
     private String fullName;
     private String email;
     private boolean enabled=true;
-
+    //each user can has more than role and each role can has more than user
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",

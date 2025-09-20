@@ -11,30 +11,30 @@ public class BorrowRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // علاقة مع العضو
+   //each member can make more than borrow
     @ManyToOne
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
-    // علاقة مع الكتاب
+    //each book can has more than borrow
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
-
+    //borrow date
     @Column(nullable = false)
     private LocalDate borrowDate;
+    //borrow due date
+    @Column(nullable = false)
+    private LocalDate dueDate;
+     //real return date time
+    private LocalDate returnDate;
 
     @Column(nullable = false)
-    private LocalDate dueDate;   // تاريخ الاستحقاق
-
-    private LocalDate returnDate; // تاريخ الإرجاع
-
-    @Column(nullable = false)
-    private String status; // مثلا: "BORROWED", "RETURNED", "OVERDUE"
-
+    //borrowed or returned
+    private String status;
     public BorrowRecord() {}
 
-    // --- Getters & Setters ---
+    //  Getters  Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

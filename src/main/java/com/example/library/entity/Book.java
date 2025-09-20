@@ -16,6 +16,7 @@ public class Book {
     private String language;
     private Integer publishYear;
     @Column(unique = true, nullable = false, length = 13)
+    //unique number for each book (13 number)
     private String isbn;
     private String edition;
 
@@ -23,6 +24,8 @@ public class Book {
     private String summary;
 
     private String coverImageUrl;
+
+    //join with publisher each book has a publisher
     @ManyToOne
     @JoinColumn(name="publisher_id")
     private Publisher publisher;
@@ -30,6 +33,7 @@ public class Book {
     private Integer totalCopies =1;
     private Integer availableCopies=1;
 
+    //Support for multiple authors per book
    @ManyToMany
     @JoinTable(
             name="book_authors",
@@ -37,6 +41,8 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name="author_id")
     )
     private Set<Author> authors = new HashSet<>();
+
+   //each book may has more than category
     @ManyToMany
     @JoinTable(
             name="book_categories",
@@ -44,6 +50,9 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name="category_id")
     )
     private Set<Category> categories = new HashSet<>();
+
+
+    //setter  getter
 
     public String getSummary() {
         return summary;

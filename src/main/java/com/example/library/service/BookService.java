@@ -24,12 +24,12 @@ public class BookService {
         validateCopies(book.getTotalCopies(), book.getAvailableCopies());
         return bookRepo.save(book);
     }
-
+      //book by id
     public Optional<Book> getById(Long id) {
         return bookRepo.findById(id);
     }
-
-    public Page<Book> list(Pageable pageable) {
+     //all books
+         public Page<Book> list(Pageable pageable) {
         return bookRepo.findAll(pageable);
     }
 
