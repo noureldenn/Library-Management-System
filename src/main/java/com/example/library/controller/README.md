@@ -52,3 +52,6 @@ BOOKS ||--o{ CATEGORIES : "belongs to"
 BOOKS }o--|| PUBLISHERS : "published byBORROW_RECORDS }o--|| BOOKS : "borrowed book"
  BORROW_RECORDS }o--|| MEMBERS : "borrowed by"
    USERS ||--o{ ROLES : "has"
+
+##link postman collection
+https://web.postman.co/workspace/My-Workspace~f13fbb73-617c-43d4-86fb-f8707615bd10/collection/28582846-c3111368-8464-4d24-8c21-642f074c0035?action=share&source=copy-link&creator=28582846
